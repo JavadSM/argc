@@ -19,9 +19,9 @@ class argc:
     def get(self, string, useBool = True):
         if string in self.args:
             if useBool:
-                if self.args[string]:
+                if self.args[string] and useBool:
                     return True
-                elif not self.args[string]:
+                elif not self.args[string] and useBool:
                     return False
                 else:
                     return None

@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="argc",
-    version="0.2.2",
+    version="0.3.0",
     description="A argument parsing module for python 2 and 3",
     author="Javad Shafique",
     author_email="javadshafique@hotmail.com",

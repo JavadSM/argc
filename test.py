@@ -1,3 +1,4 @@
+from __future__ import print_function
 # example program that takes some arguments
 # run as ${python} test.py ${args}
 
@@ -39,4 +40,5 @@ if __name__ == "__main__":
         print("am not using L")
 
     # and for custom config
+    print(args.args)
     print(args.get("config", False)) # Use raw data returns None if it does not exist 
