@@ -2,7 +2,7 @@ from __future__ import print_function
 # example program that takes some arguments
 # run as ${python} test.py ${args}
 
-import random
+import random, sys
 from argc import argc
 
 __version__ = "1.0.0"
@@ -23,7 +23,7 @@ __help__ = [
 # all triggers the hello command/option
 
 if __name__ == "__main__":
-    args = argc() # uses sys.argv by default
+    args = argc(sys.argv[1:], False) # uses sys.argv by default
     args.add("help", __help__, True) # exits on help
     args.add("version", __version__,  True)
     # supports functions (prints return value)
@@ -37,6 +37,7 @@ if __name__ == "__main__":
     if args.get("useL"):
         print("Using L")
     else:
+        print(args.get("useL"))
         print("am not using L")
 
     # and for custom config

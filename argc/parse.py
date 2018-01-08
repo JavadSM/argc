@@ -36,27 +36,31 @@ def detectType(data = str()):
             pass
     if data == None:
         return True
+
     return data
 
+
+isArg = lambda string: string[0] in ("-", "/") # checks if data starts with - or /
+keyify = lambda key: key.replace("-", "").replace("/", "") # remove - and / from keys
+
 def parse(args = list(), convert = True):
-    isArg = lambda string: string[0] in ("-", "/")
-    argv = dict()
+    argv = dict() # parsed dict
     for count, thisA in enumerate(args):
         try:
             # if we are on the last argument
             if len(args) - count == 1 and isArg(thisA):
-                argv.update({thisA: True})
+                argv.update({keyify(thisA): True})
 
             nextA = args[count + 1]
             
             if isArg(thisA) and isArg(nextA):
-                argv.update({thisA: True})
+                argv.update({keyify(thisA): True})
 
             elif isArg(thisA) and not isArg(nextA):
                 if convert:
-                    argv.update({thisA: detectType(nextA)})
+                    argv.update({keyify(thisA): detectType(nextA)})
                 else:
-                    argv.update({thisA: nextA})
+                    argv.update({keyify(thisA): nextA})
             else:
                 pass
 

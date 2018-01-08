@@ -16,15 +16,13 @@ class argc:
             else:
                 self.argc.update({command: {"do": do, "exit":False}})
 
-    def get(self, string, useBool = True):
+    def get(self, string, useBool = False):
         if string in self.args:
             if useBool:
-                if self.args[string] and useBool:
+                if self.args[string] == True and useBool:
                     return True
-                elif not self.args[string] and useBool:
-                    return False
                 else:
-                    return None
+                    return False
             else:
                 # else return data
                 return self.args[string]
