@@ -40,14 +40,14 @@ def detectType(data = str()):
     return data
 
 
-isArg = lambda string: string[0] in ("-", "/") # checks if data starts with - or /
+isArg = lambda string: string[0] == "-" # checks if data starts with -
 
 def keyify(Key):
   all = Key[:2]
   if all[0] == "-" and all[1] == "-":
-    return Key.replace("--", "-").replace("/", "")
+    return Key.replace("--", "-")
   else:
-    return Key.replace("-", "").replace("/", "")
+    return Key.replace("-", "")
 
 # set convert to false for python 2 support
 

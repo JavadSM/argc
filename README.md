@@ -1,13 +1,15 @@
 A argument parsing module that also can run commands.
 
-Note the argc.get key is the string but only if the argument started with an "-" or "/"
+Note the argc.get key is the string but only if the argument started with an "-"
 if it started with "--" then you can use it by added and "-" in front of the string
 ```py
-argc().get("s") # - and /
-argc().get("-long") # --
+argc().get("s") # - short
+argc().get("-long") # -- long
 ```
 
 ## Changelog
+
+1.1.2 - removed / in as an arguement
 
 1.1.1 - Some more bugfixes!
 
@@ -65,9 +67,10 @@ __package__ = "STRING RING"
 ]
 
 
-# arguments are case sensetive but the -- and - (/ for windows) is stripped
+# arguments are case sensetive but the -- and - is stripped
 # so you only need the names. but that also means that -hallo,  --hallo and /hallo 
-# all triggers the hello command/option
+# all triggers the hello command
+# option
 
 if __name__ == "__main__":
     args = argc() # uses sys.argv by default
