@@ -1,6 +1,6 @@
 from __future__ import print_function
 import sys
-from parse import parse
+from .parse import parse
 
 class argc:
     argc = dict()

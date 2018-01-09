@@ -9,6 +9,8 @@ argc().get("-long") # -- long
 
 ## Changelog
 
+1.1.3 - stupid dots
+
 1.1.2 - removed / in as an arguement
 
 1.1.1 - Some more bugfixes!
