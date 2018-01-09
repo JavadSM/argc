@@ -1,8 +1,8 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name="argc",
-    version="1.1.0",
+    version="1.1.1",
     description="A argument parsing module for python 2 and 3",
     author="Javad Shafique",
     author_email="javadshafique@hotmail.com",

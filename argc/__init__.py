@@ -6,7 +6,9 @@ class argc:
     argc = dict()
     args = dict()
 
-    def __init__(self, args = sys.argv[1:], detectType = True):
+    # for python2 support set detect type to false
+
+    def __init__(self, args = sys.argv[1:], detectType = False):
         self.args.update(parse(args, detectType))
     
     def add(self, command, do, exitOn = False):
@@ -44,7 +46,7 @@ class argc:
                             print(x())
                         else:
                             print(x)
-                        
+                # if function use 
                 elif hasattr(com, "__call__"):
                     print(com())
                 else:

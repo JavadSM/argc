@@ -41,7 +41,13 @@ def detectType(data = str()):
 
 
 isArg = lambda string: string[0] in ("-", "/") # checks if data starts with - or /
-keyify = lambda key: key.replace("-", "").replace("/", "") if key.count("-") == 1 else key.replace("--", "-").replace("/", "") # converts value key
+
+def keyify(Key):
+  all = Key[:2]
+  if all[0] == "-" and all[1] == "-":
+    return Key.replace("--", "-").replace("/", "")
+  else:
+    return Key.replace("-", "").replace("/", "")
 
 # set convert to false for python 2 support
 

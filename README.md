@@ -6,6 +6,20 @@ if it started with "--" then you can use it by added and "-" in front of the str
 argc().get("s") # - and /
 argc().get("-long") # --
 ```
+
+## Changelog
+
+1.1.1 - Some more bugfixes!
+
+1.1.0 - Thought so. and python2 support
+
+1.0.2 - Confusion
+
+1.0.1 - Bugfix
+
+1.0.0 - Release
+
+
 ### Example 1
 ```py
 from argc import argc
@@ -28,7 +42,6 @@ if __name__ import "__main__":
 
     args.get("-config_name", True) # get config if by default it will return Value but
     # add True it will return True/False
-    args.get("-config_name", False) # either Value or None if it doesn't exist
 ```
 
 ### Example 2
@@ -73,6 +86,6 @@ if __name__ == "__main__":
     else:
         print("am not using L")
 
-    # and for custom config
-    print(args.get("config", False)) # Use raw data returns None if it does not exist 
+    # and for custom config using long
+    print(args.get("-config", False)) # Use raw data returns None if it does not exist 
 ```
