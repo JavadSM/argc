@@ -1,5 +1,11 @@
 A argument parsing module that also can run commands.
 
+Note the argc.get key is the string but only if the argument started with an "-" or "/"
+if it started with "--" then you can use it by added and "-" in front of the string
+```py
+argc().get("s") # - and /
+argc().get("-long") # --
+```
 ### Example 1
 ```py
 from argc import argc
@@ -20,9 +26,9 @@ if __name__ import "__main__":
 
     args.run() # checks and runs arguments (can stop program)
 
-    args.get("config_name", True) # get config if by default it will return Value but
+    args.get("-config_name", True) # get config if by default it will return Value but
     # add True it will return True/False
-    args.get("config_name", False) # either Value or None if it doesn't exist
+    args.get("-config_name", False) # either Value or None if it doesn't exist
 ```
 
 ### Example 2

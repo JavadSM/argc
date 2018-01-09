@@ -41,9 +41,11 @@ def detectType(data = str()):
 
 
 isArg = lambda string: string[0] in ("-", "/") # checks if data starts with - or /
-keyify = lambda key: key.replace("-", "").replace("/", "") # remove - and / from keys
+keyify = lambda key: key.replace("-", "").replace("/", "") if key.count("-") == 1 else key.replace("--", "-").replace("/", "") # converts value key
 
-def parse(args = list(), convert = True):
+# set convert to false for python 2 support
+
+def parse(args = list(), convert = False):
     argv = dict() # parsed dict
     for count, thisA in enumerate(args):
         try:
