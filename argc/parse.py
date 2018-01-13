@@ -6,6 +6,7 @@ def isfloat(fstring):
 
 # detect type of string
 def convert(data = str()):
+    data = str(data) # make sure it is a string
     # Int
     if data.isdigit():
         data = int(data)

@@ -8,6 +8,8 @@ argc().get("-long") # -- long
 ```
 
 ## Changelog
+2.0.2 - Bugfixes
+
 2.0.1 - Fixed detectType for python2
 
 2.0.0 - Added tests working way better now
