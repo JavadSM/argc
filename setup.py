@@ -1,8 +1,10 @@
 from setuptools import setup
+from argc.version import __version__
+
 
 setup(
     name="argc",
-    version="2.0.0",
+    version=__version__,
     description="A argument parsing module for python 2 and 3",
     author="Javad Shafique",
     author_email="javadshafique@hotmail.com",

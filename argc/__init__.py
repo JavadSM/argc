@@ -1,6 +1,7 @@
 from __future__ import print_function
 import sys
-from ._parse import parse, convert, isArg
+from .version import __version__, __author__
+from .parse import parse, convert, isArg
 
 class argc:
     # for python2 support set detect type to false
@@ -31,23 +32,24 @@ class argc:
             self.add(short, command, exitOn)
             self.add(long, command, exitOn)
             
-    def get(self, string):
+    def get(self, string, detectType = False):
         if string in self.cont:
             base = self.cont[string]
             
             if base["short"] in self.args:
                 # do something
-                return self.args[base["short"]]
+                return convert(self.args[base["short"]]) if detectType else self.args[base["short"]]
 
             if base["long"] in self.args:
                 # again do 
-                return self.args[base["long"]]
+                return convert(self.args[base["long"]]) if detectType else self.args[base["long"]]
 
             return base["default"]
 
         elif string in self.args:
             # return data
-            return self.args[string]
+            return convert(self.args[string]) if detectType else self.args[string]
+
         else:
             # is not set
             return None

@@ -1,4 +1,8 @@
-import json
+import json, string
+
+# check if string is float
+def isfloat(fstring):
+    return all(c in (string.digits + ".") for c in fstring) and len(fstring) > 1 
 
 # detect type of string
 def convert(data = str()):
@@ -6,7 +10,7 @@ def convert(data = str()):
     if data.isdigit():
         data = int(data)
     # Float
-    elif data.isdecimal and "." in data:
+    elif isfloat(data):
         data = float(data)
 
     # Bool
@@ -42,7 +46,7 @@ def convert(data = str()):
 isArg = lambda string: string[0] == "-" # checks if data starts with -
 
 # set convert to false for python 2 support
-def parse(args, detect = False):
+def parse(args, detect = True):
     argv = dict() # parsed dict
     for count, thisA in enumerate(args):
         try:
