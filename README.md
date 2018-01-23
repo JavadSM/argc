@@ -8,6 +8,8 @@ argc().get("-long") # -- long
 ```
 
 ## Changelog
+2.1.0 - single file version
+
 2.0.2 - Bugfixes
 
 2.0.1 - Fixed detectType for python2

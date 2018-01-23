@@ -1,24 +1,23 @@
 import unittest
-import argc._parse as parse
 import argc
 
-class TestParser(unittest.TestCase):
+class Testargcr(unittest.TestCase):
     def test_detect(self):
-        self.assertEqual(parse.convert("10"), 10)
-        self.assertEqual(parse.convert("10.1"), 10.1)
-        self.assertEqual(parse.convert('[10, "Hallo"]'), [10, "Hallo"])
+        self.assertEqual(argc.convert("10"), 10)
+        self.assertEqual(argc.convert("10.1"), 10.1)
+        self.assertEqual(argc.convert('[10, "Hallo"]'), [10, "Hallo"])
 
-        self.assertTrue(parse.convert("True"))
-        self.assertFalse(parse.convert("False"))
+        self.assertTrue(argc.convert("True"))
+        self.assertFalse(argc.convert("False"))
 
 
     
-    def test_parse(self):
-        self.assertEqual(parse.parse(["-x", "hallo", "--use-M"]), {"-x":"hallo", "--use-M": True})
-        self.assertEqual(parse.parse(["-x", "10"], True), {"-x":10})
+    def test_argc(self):
+        self.assertEqual(argc.parse(["-x", "hallo", "--use-M"]), {"-x":"hallo", "--use-M": True})
+        self.assertEqual(argc.parse(["-x", "10"], True), {"-x":10})
 
-        self.assertTrue(parse.isArg("-x"))
-        self.assertFalse(parse.isArg("ads"))
+        self.assertTrue(argc.isArg("-x"))
+        self.assertFalse(argc.isArg("ads"))
 
 class TestArgs(unittest.TestCase):
     def test(self):

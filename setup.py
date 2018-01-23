@@ -1,5 +1,5 @@
-from setuptools import setup
-from argc.version import __version__
+from setuptools import setup, find_packages
+from argc import __version__
 
 
 setup(
@@ -9,7 +9,7 @@ setup(
     author="Javad Shafique",
     author_email="javadshafique@hotmail.com",
     license="MIT",
-    packages=["argc"],
+    py_modules=["argc"],
     include_package_data=True,
     url="https://github.com/JavadSM/argc",
     long_description=open("README.md", "r").read()
