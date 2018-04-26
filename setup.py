@@ -11,6 +11,6 @@ setup(
     license="MIT",
     py_modules=["argc"],
     include_package_data=True,
-    url="https://github.com/JavadSM/argc",
+    url="https://github.com/cjavad/argc",
     long_description=open("README.md", "r").read()
 )
